@@ -1,77 +1,215 @@
 <template>
-  <v-container>
-    <v-layout text-center wrap>
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
+  <v-app light>
+    <!-- <v-toolbar color="white">
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+    </v-toolbar> -->
+    <v-content>
+      <section>
+        <v-parallax src="@/assets/hero.jpeg" height="600">
+          <v-layout column align-center justify-center class="white--text">
+            <img src="@/assets/vuetify.png" alt="Vuetify.js" height="200" />
+            <h1 class="white--text mb-2 display-1 text-center">
+              Parallax Template
+            </h1>
+            <div class="subheading mb-4 text-center">Powered by Vuetify</div>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              href="/pre-made-themes"
+            >
+              Get Started
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
 
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
-        </p>
-      </v-flex>
-
-      <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
+      <section>
+        <v-layout column wrap class="my-12" align-center>
+          <v-flex xs12 sm4 class="my-4">
+            <div class="text-center">
+              <h2 class="headline">The best way to start developing</h2>
+              <span class="subheading">
+                Cras facilisis mi vitae nunc
+              </span>
+            </div>
+          </v-flex>
+          <v-flex xs12>
+            <v-container grid-list-xl>
+              <v-layout row wrap align-center>
+                <v-flex xs12 md4>
+                  <v-card flat class="transparent">
+                    <v-card-text class="text-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >mdi-palette</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-center">Material Design</div>
+                    </v-card-title>
+                    <v-card-text>
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
+                      volutpat tincidunt ornare. Pellentesque habitant morbi
+                      tristique senectus et netus et malesuada fames ac turpis
+                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
+                      tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card flat class="transparent">
+                    <v-card-text class="text-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >mdi-flash</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline">Fast development</div>
+                    </v-card-title>
+                    <v-card-text>
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
+                      volutpat tincidunt ornare. Pellentesque habitant morbi
+                      tristique senectus et netus et malesuada fames ac turpis
+                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
+                      tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card flat class="transparent">
+                    <v-card-text class="text-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >mdi-wrench</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-center">
+                        Completely Open Sourced
+                      </div>
+                    </v-card-title>
+                    <v-card-text>
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
+                      volutpat tincidunt ornare. Pellentesque habitant morbi
+                      tristique senectus et netus et malesuada fames ac turpis
+                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
+                      tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
         </v-layout>
-      </v-flex>
+      </section>
 
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+      <section>
+        <v-parallax src="@/assets/section.jpg" height="380">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-4 text-center">
+              Web development has never been easier
+            </div>
+            <em>Kick-start your application today</em>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              href="/pre-made-themes"
+            >
+              Get Started
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
 
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
+      <section>
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-center class="my-12">
+            <v-flex xs12 sm4>
+              <v-card flat class="transparent">
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Company info</div>
+                </v-card-title>
+                <v-card-text>
+                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat
+                  tincidunt ornare. Pellentesque habitant morbi tristique
+                  senectus et netus et malesuada fames ac turpis egestas. Nullam
+                  in aliquet odio. Aliquam eu est vitae tellus bibendum
+                  tincidunt. Suspendisse potenti.
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm4 offset-sm1>
+              <v-card flat class="transparent">
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Contact us</div>
+                </v-card-title>
+                <v-card-text>
+                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat
+                  tincidunt ornare.
+                </v-card-text>
+                <v-list class="transparent">
+                  <v-list-item>
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-phone</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>777-867-5309</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-map-marker</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>Chicago, US</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-email</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>john@vuetifyjs.com</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <v-footer color="blue darken-2">
+        <v-layout row wrap align-center>
+          <v-flex xs12>
+            <div class="white--text ml-4">
+              Made with
+              <v-icon class="red--text">mdi-heart</v-icon>
+              by
+              <a
+                class="white--text"
+                href="https://vuetifyjs.com"
+                target="_blank"
+                >Vuetify</a
+              >
+              and
+              <a class="white--text" href="https://github.com/vwxyzjn"
+                >Costa Huang</a
+              >
+            </div>
+          </v-flex>
         </v-layout>
-      </v-flex>
-
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
-
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-    </v-layout>
-  </v-container>
+      </v-footer>
+    </v-content>
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -80,57 +218,6 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'HelloWorld',
 
-  data: () => ({
-    ecosystem: [
-      {
-        text: 'vuetify-loader',
-        href: 'https://github.com/vuetifyjs/vuetify-loader'
-      },
-      {
-        text: 'github',
-        href: 'https://github.com/vuetifyjs/vuetify'
-      },
-      {
-        text: 'awesome-vuetify',
-        href: 'https://github.com/vuetifyjs/awesome-vuetify'
-      }
-    ],
-    importantLinks: [
-      {
-        text: 'Documentation',
-        href: 'https://vuetifyjs.com'
-      },
-      {
-        text: 'Chat',
-        href: 'https://community.vuetifyjs.com'
-      },
-      {
-        text: 'Made with Vuetify',
-        href: 'https://madewithvuejs.com/vuetify'
-      },
-      {
-        text: 'Twitter',
-        href: 'https://twitter.com/vuetifyjs'
-      },
-      {
-        text: 'Articles',
-        href: 'https://medium.com/vuetify'
-      }
-    ],
-    whatsNext: [
-      {
-        text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer'
-      },
-      {
-        text: 'Select a layout',
-        href: 'https://vuetifyjs.com/layout/pre-defined'
-      },
-      {
-        text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-      }
-    ]
-  })
+  data: () => ({})
 })
 </script>
