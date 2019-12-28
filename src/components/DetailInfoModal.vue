@@ -6,7 +6,9 @@
     transition="dialog-bottom-transition"
   >
     <template v-slot:activator="{ on }">
-      <v-btn color="primary" dark v-on="on">Detail</v-btn>
+      <v-layout wrap justify-center>
+        <v-btn color="primary" dark v-on="on">Detail</v-btn>
+      </v-layout>
     </template>
     <v-card>
       <v-toolbar dark color="primary">
@@ -17,19 +19,6 @@
         <v-spacer></v-spacer>
       </v-toolbar>
       <v-list three-line subheader>
-        <v-list-item>
-          <v-list-item-content>
-            <!--
-                <v-img
-                :src=contentImage
-                aspect-ratio="1"
-                class="grey lighten-2"
-                max-width="500"
-                max-height="300"
-                ></v-img>
--->
-          </v-list-item-content>
-        </v-list-item>
         <v-list-item>
           <v-list-item-content>
             {{ contentDetailText }}
@@ -61,27 +50,4 @@ export default class DetailInfoModal extends Vue {
     this.contentDetailText = contentData.contentDetailText
   }
 }
-
-// export default {
-//   data() {
-//     return {
-//       dialog: false,
-//       notifications: false,
-//       contentTitle: 'test',
-//       contentImage: '',
-//       contentDetailText: ''
-//     }
-//   },
-
-//   props: ['contentId'],
-
-//   created() {
-//     var contentData: any = require('@/contents/content_' +
-//       this.contentId +
-//       '.json')
-//     this.contentTitle = contentData
-//     this.contentImage = contentData.contentImage
-//     this.contentDetailText = contentData.contentDetailText
-//   }
-// }
 </script>
