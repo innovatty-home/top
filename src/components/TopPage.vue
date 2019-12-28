@@ -1,8 +1,5 @@
 <template>
   <v-app light>
-    <!-- <v-toolbar color="white">
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-    </v-toolbar>-->
     <v-content>
       <section>
         <v-parallax src="@/assets/hero.jpeg" height="600">
@@ -73,8 +70,8 @@ import TopMenu from '@/components/TopMenu.vue'
 import ContactUs from '@/components/ContactUs.vue'
 
 export default Vue.extend({
-  name: 'HelloWorld',
-  components: { AboutUs, TopMenu},
+  name: 'TopPage',
+  components: { AboutUs, TopMenu, ContactUs },
 
   data: () => ({})
 })
