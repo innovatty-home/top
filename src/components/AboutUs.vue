@@ -8,9 +8,9 @@
         <v-card
           flat
           max-width="650"
-          max-height="200"
+          max-height="250"
           class="mx-auto"
-          style="overflow: scroll"
+          style="overflow-y: scroll"
         >
           <v-list three-line>
             <template v-for="item in items">
