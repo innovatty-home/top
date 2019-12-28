@@ -100,20 +100,7 @@
       <section>
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-12">
-            <v-flex xs12 sm4>
-              <v-card flat class="transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Company info</div>
-                </v-card-title>
-                <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat
-                  tincidunt ornare. Pellentesque habitant morbi tristique
-                  senectus et netus et malesuada fames ac turpis egestas. Nullam
-                  in aliquet odio. Aliquam eu est vitae tellus bibendum
-                  tincidunt. Suspendisse potenti.
-                </v-card-text>
-              </v-card>
-            </v-flex>
+            <AboutUs />
             <v-flex xs12 sm4 offset-sm1>
               <v-card flat class="transparent">
                 <v-card-title primary-title class="layout justify-center">
@@ -174,9 +161,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import AboutUs from '@/components/AboutUs.vue'
 
 export default Vue.extend({
   name: 'HelloWorld',
+  components: { AboutUs },
 
   data: () => ({})
 })
