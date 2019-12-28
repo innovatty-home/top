@@ -17,6 +17,9 @@
           rの輪を広げ、 I n n o v a t i o nの芽を育み、I n n o v a t o
           rが心から自由に輝ける場を実現する
         </v-card-text>
+        <DetailInfoModal 
+          :contentId=1        
+        />            
       </v-card>
     </v-flex>
     <v-flex xs12 md4>
@@ -33,20 +36,19 @@
           Step1) 自己紹介してみよう(#_自己紹介)
           <br />
           自分の興味ごとなどを自己紹介がてらアピールしちゃってください！
-          <br />
-
-          イベント情報を手に入れよう postide-event-live
+          <br> 
+          Step2) イベント情報を手に入れよう(#_post, #ide-event-live)
+          <br>           
           innovattyの公式企画の告知などはこちらに投下されます！
           こまめにチェックして、楽しそうなものには積極的に参加してみてください！
-          イベントの実況中継用チャンネル#ide-event-liveなんかも用意されています♪
-          つぶやいてみよう とりあえず雑談
-          で面白い記事を共有したり、ツイッター感覚でつぶやいてみよう！
-          企画してみよう post とりあえず雑談
-          こんなことをしたい！仲間を集めたい！
-          そんなときは企画内容を投稿して仲間を募ってみよう！
-          チャンネルを作ってみよう new-channel-info
-          作ったチャンネルの情報を共有して新チャンネルに人を集めよう！
+          <br>
+          Step3) つぶやいてみよう&企画してみよう(#とりあえず雑談)
+          <br>          
+          面白い記事を共有したり、ツイッター感覚でつぶやいてみよう！
         </v-card-text>
+        <DetailInfoModal 
+          :contentId=2       
+        />
       </v-card>
     </v-flex>
     <v-flex xs12 md4>
@@ -66,7 +68,23 @@
           今回のテーマは・・・IBM Watson × チャットボット。
           ハンズオン形式でお米を炊くくらい簡単にチャットボット作りを体験していただけます。
         </v-card-text>
+        <DetailInfoModal 
+          :contentId=3        
+        />            
       </v-card>
     </v-flex>
   </v-layout>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import DetailInfoModal from '@/components/DetailInfoModal.vue'
+
+export default Vue.extend({
+  name: 'TopMenue',
+  components: { DetailInfoModal},
+
+  data: () => ({})
+})
+</script>
+

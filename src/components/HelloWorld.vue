@@ -74,7 +74,7 @@ import ContactUs from '@/components/ContactUs.vue'
 
 export default Vue.extend({
   name: 'HelloWorld',
-  components: { AboutUs, TopMenu, ContactUs },
+  components: { AboutUs, TopMenu},
 
   data: () => ({})
 })
