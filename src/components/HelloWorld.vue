@@ -114,7 +114,7 @@ import TopMenu from '@/components/TopMenu.vue'
 
 export default Vue.extend({
   name: 'HelloWorld',
-  components: { AboutUs, TopMenu },
+  components: { AboutUs, TopMenu},
 
   data: () => ({})
 })
