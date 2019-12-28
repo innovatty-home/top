@@ -2,38 +2,38 @@
   <v-flex xs12 sm4 offset-sm1>
     <v-card flat class="transparent">
       <v-card-title primary-title class="layout justify-center">
-        <div class="headline">Contact us</div>
+        <div class="headline">
+          Join innovatty !
+          <v-avatar size="32">
+            <v-img :src="slackicon" alt="Slack" />
+          </v-avatar>
+        </div>
       </v-card-title>
       <v-card-text>
-        Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt
-        ornare.
+        メンバーとの情報交換やイベントの告知はSlackを使用しています。下記URLかQRコードからJoin
+        !
       </v-card-text>
-      <v-list class="transparent">
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon class="blue--text text--lighten-2">mdi-phone</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>777-867-5309</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon class="blue--text text--lighten-2">mdi-map-marker</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Chicago, US</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon class="blue--text text--lighten-2">mdi-email</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>john@vuetifyjs.com</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
     </v-card>
+    <v-row>
+      <v-img :src="qr" contain :height="150" alt="Slack" />
+    </v-row>
+    <v-row :justify="'center'">
+      <a
+        href="http://ibm.biz/innovatty-register"
+        style="color: gray;"
+        target="_blank'"
+      >
+        http://ibm.biz/innovatty-register
+      </a>
+    </v-row>
   </v-flex>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    slackicon: require('@/assets/icons/slack_icon.png'),
+    qr: require('@/assets/icons/joinnovatty_qr.png')
+  })
+}
+</script>
