@@ -51,7 +51,9 @@
       "@vue/prettier",
       "@vue/typescript"
     ],
-    "rules": {},
+    "rules": {
+      "htmlWhitespaceSensitivity": "ignore"
+    },
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
     },
