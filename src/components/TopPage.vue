@@ -2,7 +2,7 @@
   <v-app light>
     <v-content>
       <section>
-        <v-parallax src="@/assets/hero.jpeg" height="600">
+        <v-parallax src="@/assets/bg1.png" height="500">
           <v-layout column align-center justify-center class="white--text">
             <img
               src="@/assets/innovatty_logo.png"
@@ -33,7 +33,7 @@
       </section>
 
       <section>
-        <v-parallax src="@/assets/section.jpg" height="380">
+        <v-parallax src="@/assets/meetup_photo.png" height="380">
           <v-layout column align-center justify-center>
             <div class="headline white--text mb-4 text-center">
               Web development has never been easier
