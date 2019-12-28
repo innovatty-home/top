@@ -1,4 +1,4 @@
-# parallax1
+# parallax
 
 ## Project setup
 
