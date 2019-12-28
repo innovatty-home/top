@@ -48,7 +48,7 @@
               large
               href="https://innovatty.slack.com/app_redirect?channel=_post"
               target="_blank"
-              >{{ hoge }}</v-btn
+              >GET START</v-btn
             >
           </v-layout>
         </v-parallax>
@@ -71,7 +71,7 @@ import Vue from 'vue'
 import AboutUs from '@/components/AboutUs.vue'
 import TopMenu from '@/components/TopMenu.vue'
 import ContactUs from '@/components/ContactUs.vue'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default Vue.extend({
   name: 'TopPage',
@@ -79,20 +79,20 @@ export default Vue.extend({
 
   data: () => ({
     hoge: ''
-  }),
+  })
 
-  created() {
-    axios
-      .get(
-        'https://script.google.com/macros/s/AKfycbzWU10DBsN6XlYwLsoTIXE5PV-IWFMZ6k5guIKmTAWbFnkBVjg/exec'
-      )
-      .then(response => {
-        console.log(response)
-        this.hoge = response.data.hogehoge
-      })
-      .catch(reason => {
-        console.log(reason)
-      })
-  }
+  // created() {
+  //   axios
+  //     .get(
+  //       'https://script.google.com/macros/s/AKfycbzWU10DBsN6XlYwLsoTIXE5PV-IWFMZ6k5guIKmTAWbFnkBVjg/exec'
+  //     )
+  //     .then(response => {
+  //       console.log(response)
+  //       this.hoge = response.data.hogehoge
+  //     })
+  //     .catch(reason => {
+  //       console.log(reason)
+  //     })
+  // }
 })
 </script>
