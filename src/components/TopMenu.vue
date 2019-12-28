@@ -3,7 +3,9 @@
     <v-flex xs12 md4>
       <v-card flat class="transparent">
         <v-card-text class="text-center">
-          <v-icon x-large class="blue--text text--lighten-2">mdi-palette</v-icon>
+          <v-icon x-large class="blue--text text--lighten-2"
+            >mdi-palette</v-icon
+          >
         </v-card-text>
         <v-card-title primary-title class="layout justify-center">
           <div class="headline text-center">innovattyの理念</div>
