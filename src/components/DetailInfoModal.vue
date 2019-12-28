@@ -10,31 +10,25 @@
           </v-btn>
           <v-toolbar-title>{{contentTitle}}</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn dark text @click="dialog = false">Save</v-btn>
-          </v-toolbar-items>
         </v-toolbar>
         <v-list three-line subheader>
-          <v-list-item>
+          <v-list-item>              
             <v-list-item-content>
+<!--
                 <v-img
-                src="@/assets/innovatty_rinen.png"
+                :src=contentImage
                 aspect-ratio="1"
                 class="grey lighten-2"
                 max-width="500"
                 max-height="300"
                 ></v-img>
+-->                
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item>              
             <v-list-item-content>
-                <v-img
-                src="@/assets/innovatty_katsudo.png"
-                aspect-ratio="1"
-                class="grey lighten-2"
-                max-width="500"
-                max-height="300"
-                ></v-img>            </v-list-item-content>
+                {{contentDetailText}}
+            </v-list-item-content>
           </v-list-item>
         </v-list>
         <v-divider></v-divider>
@@ -48,7 +42,9 @@
       return {
         dialog: false,
         notifications: false,
-        contentTitle: "test"
+        contentTitle: "test",
+        contentImage: "",
+        contentDetailText: ""
       }
     },
 
@@ -57,11 +53,8 @@
     created () {
         var contentData = require("@/contents/content_" + this.contentId + ".json");
         this.contentTitle = contentData.contentTitle;
-
-    },
-
-    mounted () {
+        this.contentImage = contentData.contentImage;
+        this.contentDetailText = contentData.contentDetailText;
     }
-
   }
 </script>
