@@ -34,34 +34,31 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import AboutUs from '@/components/AboutUs.vue'
 import TopMenu from '@/components/TopMenu.vue'
 import ContactUs from '@/components/ContactUs.vue'
 import TitleSection from '@/components/TitleSection.vue'
 import SubSection from '@/components/SubSection.vue'
-// import axios from 'axios'
+import axios from 'axios'
+const appConfig = require('@/constants/appConfig').default
 
-export default Vue.extend({
-  name: 'TopPage',
-  components: { AboutUs, TopMenu, ContactUs, TitleSection, SubSection },
-
-  data: () => ({
-    hoge: ''
-  })
-
-  // created() {
-  //   axios
-  //     .get(
-  //       'https://script.google.com/macros/s/AKfycbzWU10DBsN6XlYwLsoTIXE5PV-IWFMZ6k5guIKmTAWbFnkBVjg/exec'
-  //     )
-  //     .then(response => {
-  //       console.log(response)
-  //       this.hoge = response.data.hogehoge
-  //     })
-  //     .catch(reason => {
-  //       console.log(reason)
-  //     })
-  // }
+@Component({
+  components: { AboutUs, TopMenu, ContactUs, TitleSection, SubSection }
 })
+export default class TopPage extends Vue {
+  memberList: any = []
+
+  // @Prop()
+  created() {
+    axios
+      .get(appConfig.memberListApi + 'memberList')
+      .then(response => {
+        this.memberList = response.data
+      })
+      .catch(reason => {
+        console.log(reason)
+      })
+  }
+}
 </script>
