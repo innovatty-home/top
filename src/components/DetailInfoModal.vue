@@ -1,10 +1,5 @@
 <template>
-  <v-dialog
-    v-model="dialog"
-    fullscreen
-    hide-overlay
-    transition="dialog-bottom-transition"
-  >
+  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
     <template v-slot:activator="{ on }">
       <v-layout wrap justify-center>
         <v-btn color="primary" dark v-on="on">Detail</v-btn>
@@ -18,14 +13,10 @@
         <v-toolbar-title>{{ contentTitle }}</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
-      <v-container v-if="contentId == 1" three-line>
-        <PhilosophyInfo />
-      </v-container>
-      <v-container v-if="contentId == 2" subheader>
-        <HowToInfo />
-      </v-container>
-      <v-container v-if="contentId == 3">
-        <EventInfo />
+      <v-container fluid>
+        <PhilosophyInfo v-if="contentId == 1" />
+        <HowToInfo v-if="contentId == 2" />
+        <EventInfo v-if="contentId == 3" />
       </v-container>
       <v-divider></v-divider>
     </v-card>
