@@ -1,5 +1,5 @@
 <template>
-  <div class="bgBox" style="margin-bottom:30px">
+  <div class="bgBox">
     <v-container>
       <v-row>
         <span class="font-weight-black display-4 mt-10">{{ text.title }}</span>
@@ -14,7 +14,7 @@
       </v-row>
       <v-container class="discription" style="margin-top:20px">
         <v-row>
-          <div>{{ text.discription }}</div>
+          <div class="mb-10">{{ text.discription }}</div>
         </v-row>
       </v-container>
     </v-container>
@@ -33,9 +33,10 @@ export default class HowToWalkBox extends Vue {
 
 <style lang="scss" scoped>
 .bgBox {
-  background-color: black;
-  height: 500px;
+  //   height: 500px;
   color: #fff;
+  margin-bottom: 30px;
+  background-color: black;
 }
 
 .discription {
