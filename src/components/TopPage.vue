@@ -1,20 +1,7 @@
 <template>
   <v-app light>
     <v-content>
-      <section>
-        <v-parallax src="@/assets/bg1.png" height="500">
-          <v-layout column align-center justify-center class="white--text">
-            <img
-              src="@/assets/innovatty_logo.png"
-              alt="Vuetify.js"
-              height="200"
-            />
-            <h1 class="white--text mb-2 display-1 text-center">
-              innovators & developers community
-            </h1>
-          </v-layout>
-        </v-parallax>
-      </section>
+      <TitleSection />
 
       <section>
         <v-layout column wrap class="my-12" align-center>
@@ -71,11 +58,12 @@ import Vue from 'vue'
 import AboutUs from '@/components/AboutUs.vue'
 import TopMenu from '@/components/TopMenu.vue'
 import ContactUs from '@/components/ContactUs.vue'
+import TitleSection from '@/components/TitleSection.vue'
 // import axios from 'axios'
 
 export default Vue.extend({
   name: 'TopPage',
-  components: { AboutUs, TopMenu, ContactUs },
+  components: { AboutUs, TopMenu, ContactUs, TitleSection },
 
   data: () => ({
     hoge: ''
