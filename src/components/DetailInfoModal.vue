@@ -15,7 +15,7 @@
       </v-toolbar>
       <v-container fluid>
         <PhilosophyInfo v-if="contentId == 1" />
-        <HowToInfo v-if="contentId == 2" />
+        <HowToWalk v-if="contentId == 2" />
         <EventInfo v-if="contentId == 3" />
       </v-container>
       <v-divider></v-divider>
@@ -26,13 +26,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import PhilosophyInfo from '@/components/PhilosophyInfo.vue'
-import HowToInfo from '@/components/HowToInfo.vue'
+import HowToWalk from '@/components/HowToWalk.vue'
 import EventInfo from '@/components/EventInfo.vue'
 
 @Component({
   components: {
     PhilosophyInfo,
-    HowToInfo,
+    HowToWalk,
     EventInfo
   }
 })

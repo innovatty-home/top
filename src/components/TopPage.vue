@@ -8,9 +8,7 @@
           <v-flex xs12 sm4 class="my-4">
             <div class="text-center">
               <h2 class="headline">Learn about this community's way.</h2>
-              <span class="subheading"
-                >Read follow contents and join Slack.</span
-              >
+              <span class="subheading">Read follow contents and join Slack.</span>
             </div>
           </v-flex>
           <v-flex xs12>
