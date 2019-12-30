@@ -19,14 +19,14 @@
         <v-spacer></v-spacer>
       </v-toolbar>
       <v-container v-if="contentId == 1" three-line>
-        <PhilosophyInfo />      
+        <PhilosophyInfo />
       </v-container>
       <v-container v-if="contentId == 2" subheader>
-        <HowToInfo />      
-      </v-container>  
+        <HowToInfo />
+      </v-container>
       <v-container v-if="contentId == 3">
-        <EventInfo />      
-      </v-container>        
+        <EventInfo />
+      </v-container>
       <v-divider></v-divider>
     </v-card>
   </v-dialog>
@@ -35,19 +35,17 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import PhilosophyInfo from '@/components/PhilosophyInfo.vue'
-import HowToInfo from  '@/components/HowToInfo.vue'
-import EventInfo from  '@/components/EventInfo.vue'
+import HowToInfo from '@/components/HowToInfo.vue'
+import EventInfo from '@/components/EventInfo.vue'
 
 @Component({
-    components: {
-        PhilosophyInfo,
-        HowToInfo,
-        EventInfo
-}
+  components: {
+    PhilosophyInfo,
+    HowToInfo,
+    EventInfo
+  }
 })
-
 export default class DetailInfoModal extends Vue {
-    
   dialog: boolean = false
   notifications: Boolean = false
   contentTitle: String = 'test'

@@ -12,21 +12,27 @@
           class="mx-auto"
           style="overflow-y: scroll"
         >
-          <v-list three-line>
-            <template v-for="item in items">
-              <v-list-item :key="item.name">
-                <v-list-item-avatar>
-                  <v-img :src="item.avatar"></v-img>
-                </v-list-item-avatar>
+          <v-list>
+            <v-list-item v-for="item in this.memberList" :key="item.id">
+              <v-dialog width="500">
+                <template v-slot:activator="{ on }">
+                  <v-layout raw v-on="on" style="margin-top:6px">
+                    <v-list-item-avatar>
+                      <v-img
+                        :src="require('@/assets/profile/' + item.id + '.png')"
+                      ></v-img>
+                    </v-list-item-avatar>
 
-                <v-list-item-content>
-                  <v-list-item-title v-html="item.name"></v-list-item-title>
-                  <v-list-item-subtitle
-                    v-html="item.company"
-                  ></v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
+                    <v-list-item-content>
+                      <v-list-item-title
+                        v-text="item['氏名']"
+                      ></v-list-item-title>
+                    </v-list-item-content>
+                  </v-layout>
+                </template>
+                <ProfileDetail :profile="item" />
+              </v-dialog>
+            </v-list-item>
           </v-list>
         </v-card>
       </v-flex>
@@ -34,47 +40,15 @@
   </v-flex>
 </template>
 
-<script>
-export default {
-  data: () => ({
-    items: [
-      {
-        avatar: require('@/assets/profile/uei.png'),
-        name: 'Kentaroh Uei',
-        company: '日本アイ・ビー・エム システムズエンジニアリング㈱'
-      },
-      {
-        avatar: require('@/assets/profile/uchino.png'),
-        name: 'Sohei Uchino',
-        company: '日本アイ・ビー・エム システムズエンジニアリング㈱'
-      },
-      {
-        avatar: require('@/assets/profile/sagawa.png'),
-        name: 'Junki Sagawa',
-        company: '日本アイ・ビー・エム システムズエンジニアリング㈱'
-      },
-      {
-        avatar: require('@/assets/profile/kitamura.png'),
-        name: 'Hiromichi Kitamura',
-        company: '日本アイ・ビー・エム システムズエンジニアリング㈱'
-      },
-      {
-        avatar: require('@/assets/profile/hanzawa.png'),
-        name: 'Genki Hanzawa',
-        company: '日本アイ・ビー・エム システムズエンジニアリング㈱'
-      },
-      {
-        avatar: require('@/assets/profile/fujikawa.png'),
-        name: 'Yuji Fujikawa',
-        company: '日本アイ・ビー・エム ソリューションサービス㈱'
-      },
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
+import ProfileDetail from '@/components/ProfileDetail.vue'
 
-      {
-        avatar: require('@/assets/profile/nakamura.png'),
-        name: 'Meri Nakamura',
-        company: '日本アイ・ビー・エム㈱'
-      }
-    ]
-  })
+@Component({
+  components: { ProfileDetail }
+})
+export default class AboutUs extends Vue {
+  @Prop()
+  memberList!: any
 }
 </script>

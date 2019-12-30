@@ -24,7 +24,7 @@
       <section>
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-12">
-            <AboutUs />
+            <AboutUs :memberList="memberList" />
             <ContactUs />
           </v-layout>
         </v-container>
