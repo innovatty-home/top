@@ -10,8 +10,8 @@
           <v-chip class="ma-2" small color="primary">
           {{eventObj.イベント種類}}
           </v-chip>
-          <v-chip class="ma-2" small :color="(eventObj.ステータス === 'イベント終了')?'default':'primary'">
-          {{eventObj.ステータス}}
+          <v-chip class="ma-2" small :color="(eventObj.isEnded)?'default':'primary'">
+          {{eventObj.isEnded === true?'イベント終了':'参加者募集中'}}
           </v-chip>          
         </div>        
         <v-card-text class="text--primary">
@@ -36,6 +36,19 @@
 import { Component, Vue } from 'vue-property-decorator'
 import axios from 'axios'
 const appConfig = require('@/constants/appConfig').default
+const today = new Date()
+
+// イベントが終了しているか否かを返す
+const isEndedEvent = (eventDate: String): Boolean => {
+    let dateArr:String[] = eventDate.split(/\/|\(/, 3)
+    let tmpEventDate = new Date(Number(dateArr[0]), Number(dateArr[1]) - 1, Number(dateArr[2]), 0, 0)
+
+    if (today > tmpEventDate){      
+      return true
+    }else{
+      return false
+    }    
+}
 
 @Component
 export default class EventInfo extends Vue {
@@ -49,6 +62,8 @@ export default class EventInfo extends Vue {
       .then(response => {
         // スプレッドシートは下の行に最新データが追加されるので、配列の中身を反転して、最新の情報がindexの上に来るようにする
         this.eventsArr = response.data.reverse()
+        this.eventsArr.map((eventObj:any) => eventObj.isEnded = isEndedEvent(eventObj.イベント開催日時))
+
       })
       .catch(reason => {
         console.log(reason)
