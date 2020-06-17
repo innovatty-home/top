@@ -10,7 +10,7 @@
       :key="index"
       class="mb-4"
     >
-      <v-card class="mx-auto" max-width="450" height="450">
+      <v-card class="mx-auto" max-width="450">
         <v-img
           class="white--text align-end"
           height="200px"
@@ -49,6 +49,15 @@
             target="_blank'"
           >
             イベント開催ページへ
+          </v-btn>
+          <v-btn
+            v-if="!eventObj.イベントURL"
+            color="white"
+            text
+            :href="eventObj.イベントURL"
+            target="_blank'"
+          >
+            .
           </v-btn>
         </v-card-actions>
       </v-card>
