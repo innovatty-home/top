@@ -1,5 +1,10 @@
 <template>
-  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+  <v-dialog
+    v-model="dialog"
+    fullscreen
+    hide-overlay
+    transition="dialog-bottom-transition"
+  >
     <template v-slot:activator="{ on }">
       <v-layout wrap justify-center>
         <v-btn color="primary" dark v-on="on">Detail</v-btn>
