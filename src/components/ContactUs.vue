@@ -26,6 +26,14 @@
         http://ibm.biz/innovatty-register
       </a>
     </v-row>
+    <v-row :justify="'center'">
+      <v-btn class="mx-2" fab dark small color="#1ea1f3" href="https://twitter.com/_innovatty" target="_blank'">
+        <v-icon dark>mdi-twitter</v-icon>
+      </v-btn>      
+      <v-btn class="mx-2" fab dark small color="#316698" href="https://www.instagram.com/_innovatty/" target="_blank'">
+        <v-icon dark>mdi-instagram</v-icon>
+      </v-btn>      
+    </v-row>
   </v-flex>
 </template>
 
